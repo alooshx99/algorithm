@@ -6,13 +6,10 @@ Example: Weights: [2, 3, 4, 5], Values: [3, 4, 5, 6], Capacity: 5 → Output: 6
 
 def knapsack(weights, values, capacity):
     arr =[]
-    subArr = []
+    
     for i in range(len(weights)):
-        subArr.append(values[i]/weights[i])
-        subArr.append(values[i])
-        subArr.append(weights[i])
-        arr.append(subArr)
-        subArr = []
+        arr.append([values[i]/weights[i], values[i], weights[i]])
+        
 
     arr.sort()
 
@@ -30,3 +27,5 @@ def knapsack(weights, values, capacity):
 
 
     return knapsackValue
+
+print(knapsack([1, 2, 3], [10, 15, 40], 5))
